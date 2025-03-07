@@ -1,55 +1,108 @@
-.menuderoulant {
-    height: 60px;
-    list-style: none;
-    padding: 10px;
-    margin: 40px;
-  }
-  
-  .menuderoulant li {
-    float: left;
-    width: 200px;
-  }
-  
-  .menuderoulant li a:link, .menuderoulant li a:visited {
-    display: block;
-    color: #ffffff
-    background-color: #45aaf2;
-    padding: 6px 10px;
-    border-right: 1px solid #ffffff;
-    text-align: center;
-    text-decoration: none;
-  }
-  
-  .menuderoulant li a:hover {background-color: #45aaf2;}
-  .menuderoulant li a:active {background-color: #45aaf2;}
-  
-  .menuderoulant .sousmenu {
-    list-style: none;
+* {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+   text-decoration: none;
+   font-family: "Poppins";
+}
+
+header {
+   width: 100%;
+    height: 70px;
+    background-color: #3a3a3a;
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex-direction: row;
+}
+
+header > a,
+header button {
+    color: azure;
+    margin: 0 15px;
+    font-size: 1.3rem;
+}
+
+header button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+header .drop1 {
+    position: relative;
+    height: 100%;
+    display: flex;
+}
+
+header .drop1 .content {
     display: none;
-    padding: 0;
-    margin: 0;
+}
+
+header .drop1:hover .content {
+    display: block;
+    display: flex;
+    flex-direction: column;
     position: absolute;
-  }
-  
-  .menuderoulant .sousmenu li {
-    float: none;
-    margin: 0;
-    padding: 0;
-    border-top: 1px solid transparent;
-    border-right: 1px solid transparent;
-  }
-  
-  .menuderoulant .sousmenu li a:link, .menuderoulant li a:visited {
+    background-color: rgb(245, 245, 245);
+    top: 70px;
+    width: 120%;
+    padding: 12px 15px;
+    box-sizing: border-box;
+    color: black;
+}
+
+header .content a {
+   color: black;
+}
+
+header .icon {
+    display: none;
+}
+
+@media (max-width: 600px) {
+  header > a,
+  header button {
+      display: none;
+}
+
+header .icon {
     display: block;
-    color: #ffffff;
-    text-decoration: none;
-    background-color: #45aaf2;
-  }
-  
-  .menuderoulant .sousmenu li a:hover {
-    background-color: #45aaf2;
-  }
-  
-  .menuderoulant li:hover .sousmenu {
+    position: absolute;
+    right: 0;
+    text-align: center;
+    width: 5% !important;
+    top: 20px;
+    padding: 0 !important;
+}
+
+header.responsive > a {
+  padding: 10px 0
+}
+
+header.responsive > a,
+header.responsive .drop1 {
     display: block;
-  }
+    width: 100%;
+    text-align: left;
+}
+
+header.responsive button {
+  display: block;
+  padding: 10px 0;
+}
+
+header {
+  flex-direction: column;
+  min-height: 70px;
+  height: 100%;
+  align-items: flex-start;
+}
+
+
+header .drop1:hover .content {
+  position: relative;
+  width: 100%;
+  top: 0;
+}
